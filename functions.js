@@ -109,12 +109,36 @@ function calculateAverageFemSalary() {
             sum = sum + (+employee.salary)
         }
     });
-    console.log('counter: ', counter);
+   // console.log('counter: ', counter);
     return sum/counter;
 }
 
 var average = calculateAverageFemSalary();
-console.log("average", average);
+//console.log("average", average);
 
 //ex4
+
+function splitEmployees (employees, filterCriteria) {
+    var maleEmployees = employees.filter( employee => employee.gender == filterCriteria)
+    //console.log(maleEmployees);
+}
+
+
+splitEmployees(employees, 'Male');
+splitEmployees(employees, 'Female');
+
+//ex5
+function convertEmployeesToObject() {
+    let newObject = {};
+    for ( let i=0; i < employees.length; i++) {
+        if (employees[i] !== undefined) {
+            Object.assign(newObject, { [employees[i].lastName]: employees[i]});
+        }
+    }
+
+    console.log('newObject: ', newObject);
+}
+
+convertEmployeesToObject();
+
 
