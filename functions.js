@@ -70,16 +70,51 @@ gender: "Male",
 salary: "668.98"
 }];
 
+
+//ex1
 function collectFirstName(employees) {
     // console.info("employees: ", employees);
     if (!employees) {
-        console.info("you did not provide any value");
+        //console.info("you did not provide any value");
     }
-};
 
     var firstNames = employees.map(function (employee) {
         return employee.firstName
     });
-    console.info(firstNames);
+   // console.log(firstNames);
+
+}        
     collectFirstName(employees);
+
+
+//ex2
+
+function calculateAverageSalary() {
+    var sum = 0;
+    employees.forEach( employee  => sum = sum + (+employee.salary));
+    return sum/10;
+    
+}
+
+// var average = calculateAverageSalary();
+//console.log("average", average);
+
+//ex3 
+function calculateAverageFemSalary() {
+    var sum = 0;
+    var counter = 0;
+    employees.forEach( employee  => {
+        if (employee.gender == "Female") {
+            counter = counter + 1;
+            sum = sum + (+employee.salary)
+        }
+    });
+    console.log('counter: ', counter);
+    return sum/counter;
+}
+
+var average = calculateAverageFemSalary();
+console.log("average", average);
+
+//ex4
 
